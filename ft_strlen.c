@@ -6,16 +6,16 @@
 /*   By: ngero <ngero@student.codam.nl>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/28 18:28:02 by ngero             #+#    #+#             */
-/*   Updated: 2026/09/28 18:30:09 by ngero            ###   ########.fr       */
+/*   Updated: 2026/09/29 09:57:48 by ngero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {
 	char	*start;
-	
+
 	while (*s)
 		s++;
 	return (s - start);

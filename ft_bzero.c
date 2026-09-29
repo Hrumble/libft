@@ -6,13 +6,13 @@
 /*   By: ngero <ngero@student.codam.nl>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/28 18:36:36 by ngero             #+#    #+#             */
-/*   Updated: 2026/09/28 18:40:16 by ngero            ###   ########.fr       */
+/*   Updated: 2026/09/29 09:55:41 by ngero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
-void	bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	while (n--)
 		*((char *)s + n) = 0;

@@ -6,7 +6,7 @@
 /*   By: ngero <ngero@student.codam.nl>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/29 17:35:33 by ngero             #+#    #+#             */
-/*   Updated: 2026/09/29 19:05:41 by ngero            ###   ########.fr       */
+/*   Updated: 2026/09/29 19:10:46 by ngero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void	*s; 
+	void	*s;
 
 	s = malloc(nmemb * size);
 	return (ft_memset(s, 0, nmemb * size));

@@ -6,7 +6,7 @@
 /*   By: ngero <ngero@student.codam.nl>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/29 14:58:04 by ngero             #+#    #+#             */
-/*   Updated: 2026/09/29 15:02:16 by ngero            ###   ########.fr       */
+/*   Updated: 2026/09/29 19:10:30 by ngero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	const char	*lseeker;
-	const char	*bseeker;
-	size_t			lenseek;
+	const char		*lseeker;
+	const char		*bseeker;
+	size_t				lenseek;
 
 	lseeker = little;
 	if (!*little)

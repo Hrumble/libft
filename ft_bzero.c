@@ -6,16 +6,15 @@
 /*   By: ngero <ngero@student.codam.nl>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/28 18:36:36 by ngero             #+#    #+#             */
-/*   Updated: 2026/09/29 13:06:35 by ngero            ###   ########.fr       */
+/*   Updated: 2026/09/30 08:25:38 by ngero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 void	ft_bzero(void *s, size_t n)
 {
-	long *p = s;
-
 	while (n--)
 		*((char *)s + n) = 0;
 }

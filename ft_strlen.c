@@ -6,7 +6,7 @@
 /*   By: ngero <ngero@student.codam.nl>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/28 18:28:02 by ngero             #+#    #+#             */
-/*   Updated: 2026/09/29 09:57:48 by ngero            ###   ########.fr       */
+/*   Updated: 2026/09/30 09:47:45 by ngero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 size_t	ft_strlen(const char *s)
 {
-	char	*start;
+	const char	*start;
 
+	start = s;
 	while (*s)
 		s++;
 	return (s - start);

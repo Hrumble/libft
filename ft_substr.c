@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 #include <stdlib.h>
 
 char	*ft_substr(const char *s, unsigned int start, size_t len)
@@ -19,5 +18,7 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	char	*substr;
 
 	substr = malloc(len * sizeof(char));
+	if (!substr)
+		return ((void *)0);
 	return(ft_memcpy(substr, s + start, len));
 }

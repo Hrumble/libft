@@ -16,8 +16,8 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	const char		*lseeker;
-	const char		*bseeker;
+	const char			*lseeker;
+	const char			*bseeker;
 	size_t				lenseek;
 
 	lseeker = little;

@@ -6,7 +6,7 @@
 /*   By: ngero <ngero@student.codam.nl>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/30 10:31:42 by ngero             #+#    #+#             */
-/*   Updated: 2026/09/30 10:44:22 by ngero            ###   ########.fr       */
+/*   Updated: 2026/09/30 19:15:05 by ngero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int	is_in_set(char c, const char *set)
+static int	is_in_set(char c, const char *set)
 {
 	while (*set)
 		if (c == *set++)
@@ -24,9 +24,9 @@ int	is_in_set(char c, const char *set)
 
 char	*ft_strtrim(const char *s1, const char *set)
 {
-	const char	*start;
-	const char	*end;
-	char				*s;
+	const char		*start;
+	const char		*end;
+	char			*s;
 	size_t			len;
 
 	len = ft_strlen(s1);
@@ -41,4 +41,3 @@ char	*ft_strtrim(const char *s1, const char *set)
 	*(s + (end - start)) = 0;
 	return (s);
 }
-

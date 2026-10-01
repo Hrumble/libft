@@ -13,10 +13,10 @@
 #include "libft.h"
 #include <stdlib.h>
 
-char *ft_strjoin(const char *s1, const char *s2)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
-	size_t	lens1;
-	size_t	lens2;
+	size_t		lens1;
+	size_t		lens2;
 	char		*s;
 
 	lens1 = ft_strlen(s1);
@@ -27,4 +27,3 @@ char *ft_strjoin(const char *s1, const char *s2)
 	*(s + lens1 + lens2 + 1) = 0;
 	return (s);
 }
-

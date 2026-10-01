@@ -74,7 +74,7 @@ int	assert_eq_strarr(char **a1, char **a2, size_t size)
 
 void test__ft_strjoin()
 {
-	printf("====		FT_STRJOIN		====\n");
+	printf("====	FT_STRJOIN	====\n");
 	{
 		assert_eq_str(ft_strjoin("Hello", " World."), "Hello World.");
 		assert_eq_str(ft_strjoin("", ""), "");
@@ -89,42 +89,119 @@ void test__ft_strjoin()
 
 void	test__ft_substr()
 {
-	printf("====		FT_SUBSTR		====\n");
-	{
-		assert_eq_str(ft_substr("Hello World.", 0, 5), "Hello");
-		assert_eq_str(ft_substr("Hello World.", 6, 5), "World");
-	}
+	printf("====	FT_SUBSTR	====\n");
+	assert_eq_str(ft_substr("Hello World.", 0, 5), "Hello");
+	assert_eq_str(ft_substr("Hello World.", 6, 5), "World");
 	printf("[DONE]\n");
 }
 
 void	test__ft_strtrim()
 {
-	printf("====		FT_STRTRIM		====\n");
-	{
-		assert_eq_str(ft_strtrim("    Hello World.     ", " "), "Hello World.");
-		assert_eq_str(ft_strtrim("--==**Motherfudger**==--", "-=*"), "Motherfudger");
-		assert_eq_str(ft_strtrim("Motherfudger**==--", "-=*"), "Motherfudger");
-		assert_eq_str(ft_strtrim("Motherfudger", "-=*"), "Motherfudger");
-		assert_eq_str(ft_strtrim("Motherfudger", ""), "Motherfudger");
-		assert_eq_str(ft_strtrim("", "-"), "");
-		assert_eq_str(ft_strtrim("-|En|shit|ifi-cation|-", "-|"),
-				"En|shit|ifi-cation");
-		assert_eq_str(ft_strtrim("Hello World", "Hedl"),
-				"o Wor");
-	}
+	printf("====	FT_STRTRIM	====\n");
+	assert_eq_str(ft_strtrim("    Hello World.     ", " "), "Hello World.");
+	assert_eq_str(ft_strtrim("--==**Motherfudger**==--", "-=*"), "Motherfudger");
+	assert_eq_str(ft_strtrim("Motherfudger**==--", "-=*"), "Motherfudger");
+	assert_eq_str(ft_strtrim("Motherfudger", "-=*"), "Motherfudger");
+	assert_eq_str(ft_strtrim("Motherfudger", ""), "Motherfudger");
+	assert_eq_str(ft_strtrim("", "-"), "");
+	assert_eq_str(ft_strtrim("-|En|shit|ifi-cation|-", "-|"),
+			"En|shit|ifi-cation");
+	assert_eq_str(ft_strtrim("Hello World", "Hedl"),
+			"o Wor");
 	printf("[DONE]\n");
 }
 
 void	test__ft_split()
 {
-	printf("====		FT_SPLIT		====\n");
+	printf("====	FT_SPLIT	====\n");
+	assert_eq_strarr(ft_split("Hello World.", ' '), (char *[]){"Hello", "World.", 0}, 3);
+	assert_eq_strarr(ft_split("   Hello       World. ", ' '), (char *[]){"Hello", "World.", 0}, 3);
+	assert_eq_strarr(ft_split("   Hello       World.  ", ' '), (char *[]){"Hello", "World.", 0}, 3);
+	assert_eq_strarr(ft_split("okwhat", ' '), (char *[]){"okwhat", 0}, 2);
+	assert_eq_strarr(ft_split("", ' '), (char *[]){0}, 1);
+	printf("[DONE]\n");
+}
+
+void	test__ft_itoa()
+{
+	printf("====	FT_ITOA		====\n");
+	assert_eq_str(ft_itoa(-4567), "-4567");
+	assert_eq_str(ft_itoa(-5), "-5");
+	assert_eq_str(ft_itoa(75921), "75921");
+	assert_eq_str(ft_itoa(2), "2");
+	assert_eq_str(ft_itoa(0), "0");
+	assert_eq_str(ft_itoa(2147483647), "2147483647");
+	assert_eq_str(ft_itoa(-2147483648), "-2147483648");
+	printf("[DONE]\n");
+}
+
+char	strmapi_upper(unsigned int i, char c)
+{
+	return ft_toupper(c + (i - i));
+}
+
+char	strmapi_weird(unsigned int i, char c)
+{
+	if (i%2 == 0)
+		return ft_toupper(c);
+	return c;
+}
+
+void	test__ft_strmapi()
+{
+	printf("====	FT_STRMAPI	====\n");
+	assert_eq_str(ft_strmapi("hey nice man.", strmapi_upper), "HEY NICE MAN.");
+	assert_eq_str(ft_strmapi("hey nice man.", strmapi_weird), "HeY NiCe mAn.");
+	printf("[DONE]\n");
+}
+
+void	striteri_upper(unsigned int i, char *c)
+{
+	*c = ft_toupper(*c + (i - i));
+}
+
+void	striteri_weird(unsigned int i, char *c)
+{
+	if (i%2 == 0)
+		*c = ft_toupper(*c + (i - i));
+}
+
+void	test__ft_striteri()
+{
+	printf("====	FT_STRITERI	====\n");
 	{
-		assert_eq_strarr(ft_split("Hello World.", ' '), (char *[]){"Hello", "World.", 0}, 3);
-		assert_eq_strarr(ft_split("   Hello       World. ", ' '), (char *[]){"Hello", "World.", 0}, 3);
-		assert_eq_strarr(ft_split("   Hello       World.  ", ' '), (char *[]){"Hello", "World.", 0}, 3);
-		assert_eq_strarr(ft_split("okwhat", ' '), (char *[]){"okwhat", 0}, 2);
-		assert_eq_strarr(ft_split("", ' '), (char *[]){0}, 1);
+		char str[] = "hey nice man.";
+		ft_striteri(str, striteri_upper);
+		assert_eq_str(str, "HEY NICE MAN.");
 	}
+	{
+		char str[] = "hey nice man.";
+		ft_striteri(str, striteri_weird);
+		assert_eq_str(str, "HeY NiCe mAn.");
+	}
+	printf("[DONE]\n");
+}
+
+void	test_ft_putnbr_fd()
+{
+	printf("====	FT_putnbr_fd	====\n");
+	ft_putstr_fd("0: ", 1);
+	ft_putnbr_fd(0, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putstr_fd("1000: ", 1);
+	ft_putnbr_fd(1000, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putstr_fd("2147483647: ", 1);
+	ft_putnbr_fd(2147483647, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putstr_fd("-2147483648: ", 1);
+	ft_putnbr_fd(-2147483648, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putstr_fd("1000: ", 1);
+	ft_putnbr_fd(1000, 2);
+	ft_putchar_fd('\n', 1);
+	printf("[DONE]\n");
+	
 }
 
 int main()
@@ -133,6 +210,11 @@ int main()
 	test__ft_substr();
 	test__ft_strtrim();
 	test__ft_split();
+	test__ft_itoa();
+	test__ft_strmapi();
+	test__ft_striteri();
+	test_ft_putnbr_fd();
+	printf("============================\n");
 	printf("[DONE]\n");
 }
 

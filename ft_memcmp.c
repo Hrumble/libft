@@ -14,13 +14,15 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	const unsigned char *cs1 = s1;
-	const unsigned char *cs2 = s2;
+	const unsigned char	*cs1;
+	const unsigned char	*cs2;
 
+	cs1 = s1;
+	cs2 = s2;
 	while (--n)
 	{
 		if (*cs1 != *cs2)
-			break;
+			break ;
 		cs1++;
 		cs2++;
 	}

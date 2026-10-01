@@ -18,8 +18,11 @@ char	*ft_strrchr(const char *s, int c)
 
 	p = (char *)0;
 	while (*s)
+	{
 		if (*s == c)
 			p = s;
+		s++;
+	}
 	if (*s == c)
 		p = s;
 	return ((char *)p);

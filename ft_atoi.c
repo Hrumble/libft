@@ -23,12 +23,7 @@ int	ft_atoi(const char *nptr)
 		sign = -1 + (*nptr++ - '-');
 	if (*nptr == '+')
 		nptr++;
-	while (*nptr)
-	{
-		if (*nptr < '0' || *nptr > '9')
-			break ;
-		total = total * 10 + (*nptr - '0');
-		nptr++;
-	}
+	while (*nptr >= '0' && *nptr <= '9')
+		total = total * 10 + (*nptr++ - '0');
 	return (total * sign);
 }

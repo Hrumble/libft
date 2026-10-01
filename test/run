@@ -1,5 +1,0 @@
-#!/bin/bash
-
-make
-cc -Wall -Wextra -Werror -g3 ./test/test.c -L. -lft
-./a.out

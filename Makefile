@@ -1,5 +1,5 @@
 CC := cc
-CFLAGS := -g3
+CFLAGS := -Wall -Wextra -Werror -g3
 NAME := libft.a
 OBJECTS := $(patsubst %.c, %.o, $(wildcard *.c))
 
@@ -12,9 +12,9 @@ clean:
 	rm -f ./*.o
 
 fclean: clean
-	rm $(NAME)
+	rm -f $(NAME)
 
-re: fclean $(NAME)
+re: fclean all
 
 $(OBJECTS): %.o: %.c
 	$(CC) $(CFLAGS) -c $^ -o $@

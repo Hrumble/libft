@@ -39,11 +39,11 @@ char	*ft_itoa(int n)
 	char	*sk;
 	int		len;
 
-	len = (divisible_by_10(n) + 1 + (n < 0));
-	s = malloc(len * sizeof(char));
+	len = (divisible_by_10(n) + (n < 0));
+	s = malloc((len + 1) * sizeof(char));
 	if (n < 0)
 		*s = '-';
-	sk = s + len - 1;
+	sk = s + len;
 	*sk-- = 0;
 	while (n > 10 || n < -10)
 	{

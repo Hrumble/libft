@@ -22,6 +22,8 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	lens1 = ft_strlen(s1);
 	lens2 = ft_strlen(s2);
 	s = malloc((lens1 + lens2 + 1) * sizeof(char));
+	if (!s)
+		return (0);
 	ft_memmove(s, s1, lens1);
 	ft_memmove(s + lens1, s2, lens2);
 	*(s + lens1 + lens2) = 0;

@@ -41,11 +41,13 @@ char	*ft_itoa(int n)
 
 	len = (divisible_by_10(n) + (n < 0));
 	s = malloc((len + 1) * sizeof(char));
+	if (!s)
+		return (0);
 	if (n < 0)
 		*s = '-';
 	sk = s + len;
 	*sk-- = 0;
-	while (n > 10 || n < -10)
+	while (n > 9 || n < -9)
 	{
 		*sk-- = ft_abs(n % 10) + '0';
 		n /= 10;

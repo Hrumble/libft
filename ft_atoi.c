@@ -24,14 +24,14 @@ int	ft_atoi(const char *nptr)
 
 	total = 0;
 	sign = 1;
+	while (ft_isspace(*nptr))
+		nptr++;
 	if (*nptr == '-' || *nptr == '+')
 	{
 		if (*nptr == '-')
 			sign = -1;
 		nptr++;
 	}
-	while (ft_isspace(*nptr))
-		nptr++;
 	while (*nptr >= '0' && *nptr <= '9')
 		total = total * 10 + (*nptr++ - '0');
 	return (total * sign);

@@ -38,14 +38,23 @@ int	count_words(const char *s, char c)
 	return (counter);
 }
 
+int	init(char ***word_arr, const char *s, char c, int	*wa_index)
+{
+	*word_arr = malloc((count_words(s, c) + 1) * sizeof(char *));
+	*wa_index = 0;
+	if (!*word_arr)
+		return (0);
+	return (1);
+}
+
 char	**ft_split(const char *s, char c)
 {
 	const char			*word_start;
 	char				**word_array;
 	int					wa_index;
 
-	word_array = malloc((count_words(s, c) + 1) * sizeof(char *));
-	wa_index = 0;
+	if (!init(&word_array, s, c, &wa_index))
+		return (0);
 	word_start = 0;
 	while (*s)
 	{

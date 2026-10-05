@@ -32,11 +32,13 @@ char	*ft_strtrim(const char *s1, const char *set)
 	len = ft_strlen(s1);
 	start = s1;
 	end = s1 + len;
-	while (is_in_set(*start, set))
+	while (len && is_in_set(*start, set))
 		start++;
-	while (is_in_set(*(end - 1), set))
+	while (len && end > start && is_in_set(*(end - 1), set))
 		end--;
 	s = malloc((end - start + 1) * sizeof(char));
+	if (!s)
+		return (0);
 	ft_memcpy(s, start, end - start);
 	*(s + (end - start)) = 0;
 	return (s);

@@ -1,7 +1,8 @@
 *This project has been created as part of the 42 curriculum by ngero.*
 
 # Description
-Libft is a library containing tools and functions that will be useful throughout the 42 cursus.
+Libft is a library containing tools and functions that will be useful throughout the 42 cursus. The goal is to build a
+library that we will be able to link in following projects.
 
 # Instructions
 Make the library using the Makefile with:

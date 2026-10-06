@@ -47,6 +47,29 @@ int	init(char ***word_arr, const char *s, char c, int	*wa_index)
 	return (1);
 }
 
+void	*free_array(char **arr)
+{
+	char	**w;
+
+	w = arr;
+	while (*w)
+		free(*w++);
+	free(arr);
+	return (0);
+}
+
+int	assign_word(const char *word_start, size_t len, char **word_array,
+		int *wa_index)
+{
+	if (!word_start)
+		return (-1);
+	word_array[*wa_index] = ft_substr(word_start, 0, len);
+	if (!word_array[*wa_index])
+		return (0);
+	(*wa_index)++;
+	return (1);
+}
+
 char	**ft_split(const char *s, char c)
 {
 	const char			*word_start;
@@ -59,18 +82,15 @@ char	**ft_split(const char *s, char c)
 	while (*s)
 	{
 		while (*s == c)
-		{
-			word_start = 0;
-			s++;
-		}
+			word_start = (const char *)(0 * (size_t)(s++));
 		while (*s != c && *s)
 		{
 			if (!word_start)
 				word_start = s;
 			s++;
 		}
-		if (word_start)
-			word_array[wa_index++] = ft_substr(word_start, 0, s - word_start);
+		if (!assign_word(word_start, s - word_start, word_array, &wa_index))
+			return (free_array(word_array));
 	}
 	word_array[wa_index] = 0;
 	return (word_array);

@@ -1,5 +1,5 @@
 *.o
 *.out
 *.a
-test
-test/*
+.test
+.test/*

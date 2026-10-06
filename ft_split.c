@@ -41,6 +41,8 @@ int	count_words(const char *s, char c)
 int	init(char ***word_arr, const char *s, char c, int	*wa_index)
 {
 	*word_arr = malloc((count_words(s, c) + 1) * sizeof(char *));
+	if (!*word_arr)
+		return (0);
 	*wa_index = 0;
 	if (!*word_arr)
 		return (0);

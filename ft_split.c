@@ -13,7 +13,7 @@
 #include "libft.h"
 #include <stdlib.h>
 
-int	count_words(const char *s, char c)
+static int	count_words(const char *s, char c)
 {
 	int	counter;
 	int	is_in_word;
@@ -38,7 +38,7 @@ int	count_words(const char *s, char c)
 	return (counter);
 }
 
-int	init(char ***word_arr, const char *s, char c, int	*wa_index)
+static int	init(char ***word_arr, const char *s, char c, int	*wa_index)
 {
 	*word_arr = malloc((count_words(s, c) + 1) * sizeof(char *));
 	if (!*word_arr)
@@ -49,7 +49,7 @@ int	init(char ***word_arr, const char *s, char c, int	*wa_index)
 	return (1);
 }
 
-void	*free_array(char **arr)
+static void	*free_array(char **arr)
 {
 	char	**w;
 
@@ -60,7 +60,7 @@ void	*free_array(char **arr)
 	return (0);
 }
 
-int	assign_word(const char *word_start, size_t len, char **word_array,
+static int	assign_word(const char *word_start, size_t len, char **word_array,
 		int *wa_index)
 {
 	if (!word_start)

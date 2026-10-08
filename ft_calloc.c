@@ -14,18 +14,11 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-int	is_overflow(size_t a, size_t b)
-{
-	if (b != 0 && b > SIZE_MAX / a)
-		return (1);
-	return (0);
-}
-
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*s;
 
-	if (is_overflow(nmemb, size))
+	if (size != 0 && nmemb > SIZE_MAX / size)
 		return (0);
 	s = malloc(nmemb * size);
 	if (!s)

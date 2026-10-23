@@ -1,4 +1,0 @@
-Diagnostics:
-  Suppress: keyword_as_parameter
-CompileFlags:
-  Add: [-xc]

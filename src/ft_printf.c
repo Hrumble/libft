@@ -6,7 +6,7 @@
 /*   By: ngero <ngero@student.codam.nl>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/08 16:59:15 by ngero             #+#    #+#             */
-/*   Updated: 2026/10/10 13:39:50 by ngero            ###   ########.fr       */
+/*   Updated: 2026/10/24 02:18:14 by ngero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,9 +76,9 @@ int	ft_printf(const char *s, ...)
 	return (character_count);
 }
 
-int main()
-{
-	// printf("%p", (unsigned long)-1);
-	ft_printf(NULL);
-	// printf("%u", -(unsigned)-123);
-}
+// int main()
+// {
+// 	// printf("%p", (unsigned long)-1);
+// 	ft_printf(NULL);
+// 	// printf("%u", -(unsigned)-123);
+// }

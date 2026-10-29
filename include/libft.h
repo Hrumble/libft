@@ -6,7 +6,7 @@
 /*   By: ngero <ngero@student.codam.nl>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/29 09:58:34 by ngero             #+#    #+#             */
-/*   Updated: 2026/10/27 19:21:37 by ngero            ###   ########.fr       */
+/*   Updated: 2026/10/29 22:26:52 by ngero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void			*ft_memmove(void *dest, const void *src, size_t n);
 void			*ft_memset(void *s, int c, size_t n);
 void			*ft_memchr(const void *s, int c, size_t n);
 void			*ft_calloc(size_t nmemb, size_t size);
+void			*ft_realloc(void *ptr, size_t size);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strrchr(const char *s, int c);
 char			*ft_strnstr(const char *big, const char *little, size_t len);

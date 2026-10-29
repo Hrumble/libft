@@ -8,7 +8,7 @@ OBJECTS := $(addprefix ./src/, ft_atoi.o ft_bzero.o ft_calloc.o ft_isalnum.o ft_
 		   ft_strtrim.o ft_substr.o ft_tolower.o ft_toupper.o \
 		   get_next_line.o get_next_line_utils.o \
 		   ft_printf.o ft_putptr.o ft_putnbr_base.o ft_putnbr_uint.o ft_putstr.o ft_putchar.o \
-		   ft_strcmp.o \
+		   ft_strcmp.o ft_realloc.o \
 		   )
 
 all: $(NAME)

@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include "get_next_line.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
@@ -35,7 +36,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	return (dest);
 }
 
-void	*ft_realloc(void **s, size_t *current_size)
+void	*ft_srealloc(void **s, size_t *current_size)
 {
 	void	*new;
 
@@ -74,7 +75,7 @@ int	read_next_chunk(int fd, t_ofbuffer	*overflow_buf)
 		if (output <= 0)
 			return (free(chunk), output);
 		while ((size_t)output > overflow_buf->buf_size - overflow_buf->chars)
-			if (!ft_realloc((void *)&overflow_buf->buffer,
+			if (!ft_srealloc((void *)&overflow_buf->buffer,
 					&overflow_buf->buf_size))
 				return (free(chunk), -1);
 		ft_memmove(overflow_buf->buffer + overflow_buf->chars, chunk, output);

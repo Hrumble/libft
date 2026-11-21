@@ -14,7 +14,7 @@
 #include <stddef.h>
 #include <stdlib.h>
 
-void	*ft_realloc(void *ptr, size_t size)
+void	*ft_realloc(void *ptr, size_t size, size_t original_size)
 {
 	void	*new_alloc;
 
@@ -25,7 +25,8 @@ void	*ft_realloc(void *ptr, size_t size)
 		new_alloc = malloc(size);
 		if (!new_alloc)
 			return (0);
-		ft_memcpy(new_alloc, ptr, size);
+		ft_memcpy(new_alloc, ptr, original_size);
+		free(ptr);
 	}
 	return (new_alloc);
 }
